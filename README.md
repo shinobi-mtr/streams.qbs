@@ -5,16 +5,13 @@ Qbs: قَبَسَ • (qabasa) I (non-past يَقْبِسُ (yaqbisu), verbal no
 
 ## Idea
 
-An implementation for some of golang `io` functionalities but for clang.
+Uses an implementation for some of golang `io` functionalities but for clang, and provide an adapting layer for `file` and `tcp` sockets.
 
 ## Features
 
-- Copy: copy stream from given reader to given writer with default buffering (512 bytes).
-- Copy buffer: copy stream from given reader to given writer but with given buffer.
-- Limit reader: read from given reader until n bytes are reached, return error otherwise.
-- Read at least: read at least n bytes from given reader into given buffer.
-- Read full: read bytes from given reader until the given buffer is full.
+- Basic adapter for `file` operations.
+- Basic adapter for `tcp` client operations.
 
-## Ignored
+## To Be Done
 
-- Read all: I did not want to take control on the memory in this lib, so read all is ignored
+- Handle `tcp` server and clients connections as streams (reader, writer, closer).
