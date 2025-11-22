@@ -19,6 +19,9 @@ void test_from_file_to_socket() {
 
   qbs_io_respose_t cr = qbs_io_copy(&tcp, &file);
   assert(cr.err == qbs_io_err_null);
+
+  file.close(&file);
+  tcp.close(&file);
 }
 
 void test_from_socket_to_file() {
@@ -39,6 +42,9 @@ void test_from_socket_to_file() {
 
   qbs_io_respose_t cr = qbs_io_copy(&file, &tcp);
   assert(cr.err == qbs_io_err_null);
+
+  file.close(&file);
+  tcp.close(&file);
 }
 
 int main() {
